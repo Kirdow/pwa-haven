@@ -21,7 +21,7 @@ export default class PopoutVisualizer {
     const scale = window.devicePixelRatio
     canvas.width = Math.floor(scale * baseWidth)
     canvas.height = Math.floor(scale * baseHeight)
-    ctx.scale(scale)
+    ctx.scale(scale, scale)
 
     return { ctx, canvas }
   }
