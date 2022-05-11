@@ -13,10 +13,16 @@ export default class PopoutVisualizer {
   }
 
   createCanvas () {
+    const baseWidth = 1024
+    const baseHeight = 256
+
     const canvas = document.createElement('canvas')
     const ctx = canvas.getContext('2d')
-    canvas.width = 1024
-    canvas.height = 256
+    const scale = window.devicePixelRatio
+    canvas.width = Math.floor(scale * baseWidth)
+    canvas.height = Math.floor(scale * baseHeight)
+    ctx.scale(scale)
+
     return { ctx, canvas }
   }
 
